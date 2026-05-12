@@ -206,7 +206,9 @@ export default function Home() {
           </nav>
 
           <a
-            href="#contact"
+            href="https://calendly.com/fluxential/fluxential-free-audit"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-full bg-gradient-to-r from-violet to-electric px-5 py-3 text-sm font-semibold text-white shadow-glow md:inline-flex"
           >
             Book a Strategy Call
