@@ -316,9 +316,9 @@ export default function Home() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {industries.map((industry) => (
-              <div key={industry} className="gradient-border rounded-3xl p-6">
-                <Layers3 className="mb-5 h-8 w-8 text-electric" />
-                <h3 className="text-xl font-bold">{industry}</h3>
+              <div key={industry.name} className="gradient-border rounded-3xl p-6">
+                <industry.icon className="mb-5 h-8 w-8 text-electric" />
+                <h3 className="text-xl font-bold">{industry.name}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate">
                   AI workflows for intake, qualification, follow-up, reporting,
                   and customer experience.
