@@ -84,8 +84,8 @@ function Logo() {
       <Image
         src="/fluxential-logo-short.png"
         alt="Fluxential"
-        width={170}
-        height={40}
+        width={220}
+        height={52}
         priority
       />
     </div>
