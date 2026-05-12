@@ -15,7 +15,6 @@ import {
   Zap,
   Home,
   HeartPulse,
-  Sparkles,
   Wrench,
   ShoppingCart,
   BriefcaseBusiness,
