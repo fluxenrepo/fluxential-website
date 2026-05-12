@@ -23,11 +23,6 @@ import Image from "next/image";
 
 const services = [
   {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
-      apple: "/icon.png",
-  },
-  {
     icon: Zap,
     title: "AI Automation",
     description: "End-to-end workflow automation that removes repetitive manual work.",
