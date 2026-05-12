@@ -13,7 +13,7 @@ import {
   Sparkles,
   Workflow,
   Zap,
-  Home,
+  HomeIcon,
   HeartPulse,
   Wrench,
   ShoppingCart,
@@ -55,7 +55,7 @@ const services = [
 ];
 
 const industries = [
-  { icon: Home, name: "Real Estate" },
+  { icon: HomeIcon, name: "Real Estate" },
   { icon: HeartPulse, name: "Healthcare" },
   { icon: Sparkles, name: "Med Spas" },
   { icon: Wrench, name: "Home Services" },
