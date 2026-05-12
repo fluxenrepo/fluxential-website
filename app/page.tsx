@@ -94,26 +94,33 @@ function Logo() {
 
 function Button({
   children,
+  href,
   variant = "primary",
+  target,
+  rel,
 }: {
   children: React.ReactNode;
+  href: string;
   variant?: "primary" | "secondary";
+  target?: string;
+  rel?: string;
 }) {
-  if (variant === "secondary") {
-    return (
-      <a
-        href="#services"
-        className="inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-7 py-4 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
-      >
-        {children}
-      </a>
-    );
-  }
+  const baseClass =
+    "inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 text-sm font-semibold transition";
+
+  const variants = {
+    primary:
+      "bg-gradient-to-r from-violet to-electric text-white shadow-glow hover:scale-[1.02]",
+    secondary:
+      "border border-white/15 bg-white/5 text-white hover:border-white/30 hover:bg-white/10",
+  };
 
   return (
     <a
-      href="#contact"
-      className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-7 py-4 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02]"
+      href={href}
+      target={target}
+      rel={rel}
+      className={`${baseClass} ${variants[variant]}`}
     >
       {children}
     </a>
@@ -235,18 +242,16 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a
+              <Button
                 href="https://calendly.com/fluxential/fluxential-free-audit"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button>
-                  Book a Free AI Strategy Call
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </a>
+                Book a Free AI Strategy Call
+                <ArrowRight className="h-5 w-5" />
+              </Button>
 
-              <Button variant="secondary">
+              <Button href="#services" variant="secondary">
                 <PlayCircle className="h-5 w-5" />
                 See How It Works
               </Button>
