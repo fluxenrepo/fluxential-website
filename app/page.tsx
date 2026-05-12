@@ -77,7 +77,7 @@ function Logo() {
   return (
     <div className="flex items-center gap-3">
       <Image
-        src="/fluxential-logo.png"
+        src="/fluxential-logo-short.png"
         alt="Fluxential"
         width={170}
         height={40}
