@@ -13,6 +13,12 @@ import {
   Sparkles,
   Workflow,
   Zap,
+  Home,
+  HeartPulse,
+  Sparkles,
+  Wrench,
+  ShoppingCart,
+  BriefcaseBusiness,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -50,12 +56,12 @@ const services = [
 ];
 
 const industries = [
-  "Real Estate",
-  "Healthcare",
-  "Med Spas",
-  "Home Services",
-  "E-commerce",
-  "Professional Services",
+  { icon: Home, name: "Real Estate" },
+  { icon: HeartPulse, name: "Healthcare" },
+  { icon: Sparkles, name: "Med Spas" },
+  { icon: Wrench, name: "Home Services" },
+  { icon: ShoppingCart, name: "E-commerce" },
+  { icon: BriefcaseBusiness, name: "Professional Services" },
 ];
 
 const steps = [
@@ -117,7 +123,7 @@ function Button({
 
 function WorkflowMockup() {
   return (
-    <div className="gradient-border relative mx-auto w-full max-w-xl rounded-[2rem] p-5 shadow-violetGlow">
+    <div className="gradient-border relative mx-auto w-full max-w-lg rounded-[2rem] p-5 shadow-violetGlow">
       <div className="absolute -inset-20 -z-10 rounded-full bg-electric/20 blur-3xl" />
       <div className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-br from-electric/20 via-transparent to-violet/20" />
 
@@ -209,7 +215,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative px-6 py-14 md:py-20">
+      <section className="relative px-6 py-10 md:py-14">
         <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet/20 blur-3xl" />
         <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
           <div>
@@ -256,7 +262,10 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-8 text-sm font-semibold text-white/70 md:justify-between">
           <span className="text-xs uppercase tracking-[0.3em] text-slate">Trusted industries</span>
           {industries.map((industry) => (
-            <span key={industry}>{industry}</span>
+            <span key={industry.name} className="flex items-center gap-2">
+              <industry.icon className="h-4 w-4 text-white/50" />
+              {industry.name}
+            </span>
           ))}
         </div>
       </section>
