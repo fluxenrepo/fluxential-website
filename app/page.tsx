@@ -14,6 +14,7 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
@@ -75,14 +76,13 @@ const steps = [
 function Logo() {
   return (
     <div className="flex items-center gap-3">
-      <div className="relative h-9 w-9 overflow-hidden rounded-xl bg-gradient-to-br from-electric to-violet shadow-glow">
-        <div className="absolute left-2 top-2 h-2 w-6 rounded-full bg-white/80" />
-        <div className="absolute left-2 top-4 h-2 w-5 rounded-full bg-white/70" />
-        <div className="absolute left-2 top-6 h-2 w-4 rounded-full bg-white/60" />
-      </div>
-      <span className="text-lg font-semibold tracking-[0.32em] text-white">
-        FLUXENTIAL
-      </span>
+      <Image
+        src="/fluxential-logo.png"
+        alt="Fluxential"
+        width={170}
+        height={40}
+        priority
+      />
     </div>
   );
 }
@@ -209,7 +209,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative px-6 py-24 md:py-32">
+      <section className="relative px-6 py-14 md:py-20">
         <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet/20 blur-3xl" />
         <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
           <div>
