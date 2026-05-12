@@ -235,11 +235,20 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <Button>
-                Book a Free AI Strategy Call <ArrowRight className="h-5 w-5" />
-              </Button>
+              <a
+                href="https://calendly.com/fluxential/fluxential-free-audit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button>
+                  Book a Free AI Strategy Call
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </a>
+
               <Button variant="secondary">
-                <PlayCircle className="h-5 w-5" /> See How It Works
+                <PlayCircle className="h-5 w-5" />
+                See How It Works
               </Button>
             </div>
 
@@ -369,7 +378,9 @@ export default function Home() {
           </p>
           <div className="mt-8">
             <a
-              href="mailto:hello@fluxential.com"
+              href="https://calendly.com/fluxential/fluxential-free-audit"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
             >
               hello@fluxential.com <ArrowRight className="h-5 w-5" />
