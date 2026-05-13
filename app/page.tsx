@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { PopupButton } from "react-calendly";
 import {
   ArrowRight,
   BarChart3,
@@ -240,12 +241,12 @@ export default function Home() {
             <a href="#contact" className="hover:text-white">Contact</a>
           </nav>
 
-          <a
-            href="https://calendly.com/fluxential/fluxential-free-audit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-full bg-gradient-to-r from-violet to-electric px-5 py-3 text-sm font-semibold text-white shadow-glow md:inline-flex"
-          >
+          <PopupButton
+            url="https://calendly.com/fluxential/fluxential-free-audit"
+            rootElement={document.body}
+            text="Book a Free Strategy Call"
+            className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
+          />
             Book a Strategy Call
           </a>
         </div>
@@ -270,11 +271,12 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <Button
-                href="https://calendly.com/fluxential/fluxential-free-audit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PopupButton
+                url="https://calendly.com/fluxential/fluxential-free-audit"
+                rootElement={document.body}
+                text="Book a Free Strategy Call"
+                className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
+              />
                 Book a Free AI Strategy Call
                 <ArrowRight className="h-5 w-5" />
               </Button>
@@ -451,12 +453,12 @@ export default function Home() {
               </p>
             )}
           </form>
-            <a
-              href="https://calendly.com/fluxential/fluxential-free-audit"
-              target="_blank"
-              rel="noopener noreferrer"
+            <PopupButton
+              url="https://calendly.com/fluxential/fluxential-free-audit"
+              rootElement={document.body}
+              text="Book a Free Strategy Call"
               className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
-            >
+            />
               Book a Free Strategy Call <ArrowRight className="h-5 w-5" />
             </a>
           </div>
