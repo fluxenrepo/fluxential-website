@@ -84,8 +84,8 @@ function Logo() {
       <Image
         src="/fluxential-logo-short.png"
         alt="Fluxential"
-        width={220}
-        height={52}
+        width={320}
+        height={82}
         priority
       />
     </div>
@@ -382,6 +382,41 @@ export default function Home() {
             time, reduce cost, and create growth inside your business.
           </p>
           <div className="mt-8">
+          <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            className="mx-auto mt-8 grid max-w-xl gap-4"
+          >
+            <input
+              name="name"
+              required
+              placeholder="Your name"
+              className="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate"
+            />
+
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="Your email"
+              className="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate"
+            />
+
+            <textarea
+              name="message"
+              required
+              placeholder="What do you want to automate?"
+              rows={4}
+              className="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate"
+            />
+
+            <button
+              type="submit"
+              className="rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 font-bold text-white"
+            >
+              Request AI Audit
+            </button>
+          </form>
             <a
               href="https://calendly.com/fluxential/fluxential-free-audit"
               target="_blank"
