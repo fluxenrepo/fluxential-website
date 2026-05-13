@@ -461,6 +461,7 @@ export default function Home() {
               text="Book a Free Strategy Call"
               className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
             />
+            <a>
               Book a Free Strategy Call <ArrowRight className="h-5 w-5" />
             </a>
           </div>
