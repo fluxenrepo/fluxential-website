@@ -383,7 +383,7 @@ export default function Home() {
           </p>
           <div className="mt-8">
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://formspree.io/f/mqenjqvk"
             method="POST"
             className="mx-auto mt-8 grid max-w-xl gap-4"
           >
@@ -423,7 +423,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
             >
-              hello@fluxential.com <ArrowRight className="h-5 w-5" />
+              Book a Free Strategy Call <ArrowRight className="h-5 w-5" />
             </a>
           </div>
         </div>
