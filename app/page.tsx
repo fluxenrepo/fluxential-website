@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -192,6 +194,32 @@ function WorkflowMockup() {
 }
 
 export default function Home() {
+    const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault();
+
+      setLoading(true);
+
+      const form = e.currentTarget;
+      const data = new FormData(form);
+
+      const response = await fetch("https://formspree.io/f/mqenjqvk", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      setLoading(false);
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      }
+    }
   return (
     <main className="min-h-screen overflow-hidden bg-midnight text-white">
       <div className="border-b border-white/10 bg-gradient-to-r from-electric/20 via-violet/20 to-electric/10 px-6 py-3 text-center text-sm text-white/90">
@@ -383,8 +411,7 @@ export default function Home() {
           </p>
           <div className="mt-8">
           <form
-            action="https://formspree.io/f/mqenjqvk"
-            method="POST"
+            onSubmit={handleSubmit}
             className="mx-auto mt-8 grid max-w-xl gap-4"
           >
             <input
@@ -412,10 +439,17 @@ export default function Home() {
 
             <button
               type="submit"
-              className="rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 font-bold text-white"
+              disabled={loading}
+              className="rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 font-bold text-white disabled:opacity-60"
             >
-              Request AI Audit
+              {loading ? "Sending..." : "Request AI Audit"}
             </button>
+
+            {submitted && (
+              <p className="text-center text-green-400">
+                Thanks! Your request has been submitted successfully.
+              </p>
+            )}
           </form>
             <a
               href="https://calendly.com/fluxential/fluxential-free-audit"
