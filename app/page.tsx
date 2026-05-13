@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PopupButton } from "react-calendly";
 import {
   ArrowRight,
@@ -194,6 +194,28 @@ function WorkflowMockup() {
   );
 }
 
+function CalendlyButton({ className }: { className?: string }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <PopupButton
+      url="https://calendly.com/fluxential/fluxential-free-audit"
+      rootElement={document.body}
+      text="Book a Free Strategy Call"
+      className={
+        className ||
+        "inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
+      }
+    />
+  );
+}
+
 export default function Home() {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -241,15 +263,8 @@ export default function Home() {
             <a href="#contact" className="hover:text-white">Contact</a>
           </nav>
 
-          <PopupButton
-            url="https://calendly.com/fluxential/fluxential-free-audit"
-            rootElement={document.body}
-            text="Book a Free Strategy Call"
-            className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
-          />
-          <a>
-            Book a Strategy Call
-          </a>
+          <CalendlyButton className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]" />
+
         </div>
       </header>
 
@@ -272,12 +287,7 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <PopupButton
-                url="https://calendly.com/fluxential/fluxential-free-audit"
-                rootElement={document.body}
-                text="Book a Free Strategy Call"
-                className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
-              />
+              <CalendlyButton className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]" />
               <Button href="#services" variant="secondary">
                 <PlayCircle className="h-5 w-5" />
                 See How It Works
@@ -450,15 +460,7 @@ export default function Home() {
               </p>
             )}
           </form>
-            <PopupButton
-              url="https://calendly.com/fluxential/fluxential-free-audit"
-              rootElement={document.body}
-              text="Book a Free Strategy Call"
-              className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]"
-            />
-            <a>
-              Book a Free Strategy Call <ArrowRight className="h-5 w-5" />
-            </a>
+            <CalendlyButton className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-violet to-electric px-8 py-4 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02]" />
           </div>
         </div>
       </section>
