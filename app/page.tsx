@@ -228,12 +228,16 @@ export default function Home() {
       const form = e.currentTarget;
       const data = new FormData(form);
 
-      const response = await fetch("https://formspree.io/f/mqenjqvk", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: data,
         headers: {
-          Accept: "application/json",
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+        }),
       });
 
       setLoading(false);
